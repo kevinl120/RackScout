@@ -14,6 +14,9 @@
 		1E8DB10C1C826C7A0014BEFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E8DB10A1C826C7A0014BEFC /* LaunchScreen.storyboard */; };
 		1E8DB1171C826C7A0014BEFC /* RackScoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8DB1161C826C7A0014BEFC /* RackScoutTests.swift */; };
 		1E8DB1221C826C7A0014BEFC /* RackScoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8DB1211C826C7A0014BEFC /* RackScoutUITests.swift */; };
+		2B77E430D3BD60DF0EE4F84A /* Pods_RackScout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E11ADC9D95E0FF6B573874D /* Pods_RackScout.framework */; };
+		2BFAFF75DA0C503C1DCAEB7A /* Pods_RackScoutTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736539CD7C19565F33B3896D /* Pods_RackScoutTests.framework */; };
+		AA65CE71E5ADC7732A18B0D7 /* Pods_RackScoutUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29110D509C327D02FBBFB98B /* Pods_RackScoutUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		048CF32FB3A17FFD606AF71A /* Pods-RackScoutUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RackScoutUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RackScoutUITests/Pods-RackScoutUITests.release.xcconfig"; sourceTree = "<group>"; };
+		0BDD91A381526329A589BF19 /* Pods-RackScout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RackScout.release.xcconfig"; path = "Pods/Target Support Files/Pods-RackScout/Pods-RackScout.release.xcconfig"; sourceTree = "<group>"; };
+		13F1C0BF01980DF176499518 /* Pods-RackScoutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RackScoutTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RackScoutTests/Pods-RackScoutTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1E8DB0FE1C826C7A0014BEFC /* RackScout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RackScout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E8DB1011C826C7A0014BEFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E8DB1031C826C7A0014BEFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +53,12 @@
 		1E8DB11D1C826C7A0014BEFC /* RackScoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RackScoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E8DB1211C826C7A0014BEFC /* RackScoutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RackScoutUITests.swift; sourceTree = "<group>"; };
 		1E8DB1231C826C7A0014BEFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29110D509C327D02FBBFB98B /* Pods_RackScoutUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RackScoutUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3504E3FBD9AA169252B5AEA4 /* Pods-RackScoutUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RackScoutUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RackScoutUITests/Pods-RackScoutUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		736539CD7C19565F33B3896D /* Pods_RackScoutTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RackScoutTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8745EAE26871AA3A98547346 /* Pods-RackScout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RackScout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RackScout/Pods-RackScout.debug.xcconfig"; sourceTree = "<group>"; };
+		8E11ADC9D95E0FF6B573874D /* Pods_RackScout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RackScout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D27A617F100051892F18D4D7 /* Pods-RackScoutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RackScoutTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RackScoutTests/Pods-RackScoutTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B77E430D3BD60DF0EE4F84A /* Pods_RackScout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BFAFF75DA0C503C1DCAEB7A /* Pods_RackScoutTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA65CE71E5ADC7732A18B0D7 /* Pods_RackScoutUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +96,8 @@
 				1E8DB1151C826C7A0014BEFC /* RackScoutTests */,
 				1E8DB1201C826C7A0014BEFC /* RackScoutUITests */,
 				1E8DB0FF1C826C7A0014BEFC /* Products */,
+				E263401EF70BEA5AA42584FA /* Pods */,
+				71D10A6A08ED49C7B7B9B7A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +142,29 @@
 			path = RackScoutUITests;
 			sourceTree = "<group>";
 		};
+		71D10A6A08ED49C7B7B9B7A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8E11ADC9D95E0FF6B573874D /* Pods_RackScout.framework */,
+				736539CD7C19565F33B3896D /* Pods_RackScoutTests.framework */,
+				29110D509C327D02FBBFB98B /* Pods_RackScoutUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E263401EF70BEA5AA42584FA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8745EAE26871AA3A98547346 /* Pods-RackScout.debug.xcconfig */,
+				0BDD91A381526329A589BF19 /* Pods-RackScout.release.xcconfig */,
+				13F1C0BF01980DF176499518 /* Pods-RackScoutTests.debug.xcconfig */,
+				D27A617F100051892F18D4D7 /* Pods-RackScoutTests.release.xcconfig */,
+				3504E3FBD9AA169252B5AEA4 /* Pods-RackScoutUITests.debug.xcconfig */,
+				048CF32FB3A17FFD606AF71A /* Pods-RackScoutUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E8DB1261C826C7A0014BEFC /* Build configuration list for PBXNativeTarget "RackScout" */;
 			buildPhases = (
+				415737B224AC77D3B7D925B5 /* Check Pods Manifest.lock */,
 				1E8DB0FA1C826C7A0014BEFC /* Sources */,
 				1E8DB0FB1C826C7A0014BEFC /* Frameworks */,
 				1E8DB0FC1C826C7A0014BEFC /* Resources */,
+				583A55254846A726D5965528 /* Embed Pods Frameworks */,
+				C61E627E52D2B47C11272B87 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E8DB1291C826C7A0014BEFC /* Build configuration list for PBXNativeTarget "RackScoutTests" */;
 			buildPhases = (
+				042405A37203DD3FE23320AB /* Check Pods Manifest.lock */,
 				1E8DB10E1C826C7A0014BEFC /* Sources */,
 				1E8DB10F1C826C7A0014BEFC /* Frameworks */,
 				1E8DB1101C826C7A0014BEFC /* Resources */,
+				7A92E45EF4C142090A70C7D1 /* Embed Pods Frameworks */,
+				C381AE6F78DDA0855DEA3281 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E8DB12C1C826C7A0014BEFC /* Build configuration list for PBXNativeTarget "RackScoutUITests" */;
 			buildPhases = (
+				62E76C30169E10032EBB8E8D /* Check Pods Manifest.lock */,
 				1E8DB1191C826C7A0014BEFC /* Sources */,
 				1E8DB11A1C826C7A0014BEFC /* Frameworks */,
 				1E8DB11B1C826C7A0014BEFC /* Resources */,
+				3018A547F0FB86BB3B6C1598 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +298,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		042405A37203DD3FE23320AB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3018A547F0FB86BB3B6C1598 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RackScoutUITests/Pods-RackScoutUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		415737B224AC77D3B7D925B5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		583A55254846A726D5965528 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RackScout/Pods-RackScout-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62E76C30169E10032EBB8E8D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7A92E45EF4C142090A70C7D1 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RackScoutTests/Pods-RackScoutTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C381AE6F78DDA0855DEA3281 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RackScoutTests/Pods-RackScoutTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C61E627E52D2B47C11272B87 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RackScout/Pods-RackScout-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1E8DB0FA1C826C7A0014BEFC /* Sources */ = {
@@ -397,6 +568,7 @@
 		};
 		1E8DB1271C826C7A0014BEFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8745EAE26871AA3A98547346 /* Pods-RackScout.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RackScout/Info.plist;
@@ -408,6 +580,7 @@
 		};
 		1E8DB1281C826C7A0014BEFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BDD91A381526329A589BF19 /* Pods-RackScout.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RackScout/Info.plist;
@@ -419,6 +592,7 @@
 		};
 		1E8DB12A1C826C7A0014BEFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13F1C0BF01980DF176499518 /* Pods-RackScoutTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = RackScoutTests/Info.plist;
@@ -431,6 +605,7 @@
 		};
 		1E8DB12B1C826C7A0014BEFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D27A617F100051892F18D4D7 /* Pods-RackScoutTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = RackScoutTests/Info.plist;
@@ -443,6 +618,7 @@
 		};
 		1E8DB12D1C826C7A0014BEFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3504E3FBD9AA169252B5AEA4 /* Pods-RackScoutUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = RackScoutUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -455,6 +631,7 @@
 		};
 		1E8DB12E1C826C7A0014BEFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 048CF32FB3A17FFD606AF71A /* Pods-RackScoutUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = RackScoutUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -484,6 +661,7 @@
 				1E8DB1281C826C7A0014BEFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1E8DB1291C826C7A0014BEFC /* Build configuration list for PBXNativeTarget "RackScoutTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +670,7 @@
 				1E8DB12B1C826C7A0014BEFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1E8DB12C1C826C7A0014BEFC /* Build configuration list for PBXNativeTarget "RackScoutUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +679,7 @@
 				1E8DB12E1C826C7A0014BEFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
