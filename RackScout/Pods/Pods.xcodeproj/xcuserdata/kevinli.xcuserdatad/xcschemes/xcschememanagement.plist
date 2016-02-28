@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GeoFire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-RackScout.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,17 +32,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>08C753B5464B12475610CBA424133BD3</key>
+		<key>0CCEF101D42C74A9619CD593CFCBA94F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2F3075672BF241F236EE6728BD0D3362</key>
+		<key>41CE0E548650F701461EAB35CAFC17B9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3DFBDD0518D5A67F1BAE96201393CEA0</key>
+		<key>446462A5DE65CC4037BD52395A64A573</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>835D729FC5C617C1451049F1979292C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
