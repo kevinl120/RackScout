@@ -11,5 +11,9 @@ import UIKit
 import Firebase
 
 class BikeRack: NSObject {
+
+    @NSManaged var location: CLLocation
+    
+    
     
 }
