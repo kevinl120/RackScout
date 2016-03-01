@@ -12,9 +12,15 @@ import Firebase
 
 class MapViewController: UIViewController {
     
+    @IBOutlet weak var mapView: GMSMapView!
+    
+    @IBOutlet weak var addBikeRackButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
         
         test();
         
