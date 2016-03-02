@@ -10,7 +10,9 @@ import UIKit
 
 import Firebase
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, CLLocationManagerDelegate {
+    
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var mapView: GMSMapView!
     
@@ -20,7 +22,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
+        setUpLocationManager();
         
         test();
         
@@ -30,6 +32,26 @@ class MapViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: Location
+    
+    func setUpLocationManager() {
+        
+        locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        mapView.myLocationEnabled = true
+        mapView.camera = GMSCameraPosition.cameraWithLatitude(locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude, zoom: 16)
+    }
+    
+    // MARK: Testing -- DELETE
     
     func test() {
         
