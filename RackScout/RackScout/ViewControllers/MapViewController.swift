@@ -48,7 +48,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         mapView.myLocationEnabled = true
-        mapView.camera = GMSCameraPosition.cameraWithLatitude(locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude, zoom: 16)
+        
+        if let location = locationManager.location {
+            mapView.camera = GMSCameraPosition.cameraWithLatitude(location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 16)
+        }
     }
     
     // MARK: Testing -- DELETE

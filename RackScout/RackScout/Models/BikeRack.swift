@@ -12,21 +12,26 @@ import Firebase
 
 class BikeRack: NSObject {
 
-    @NSManaged var id: NSNumber
-    @NSManaged var location: CLLocation
+    var id: NSString
+    var location: CLLocationCoordinate2D
+    
+    init(id: NSString, location: CLLocationCoordinate2D) {
+        self.id = id
+        self.location = location
+    }
     
     func upload() {
         let ref = Firebase(url: "https://rackscout.firebaseio.com/")
         let bikeRacksRef = ref.childByAppendingPath("bikeRacks")
     
         let bikeRackDetails = [
-            "latitude": location.coordinate.latitude.description,
-            "longitude": location.coordinate.longitude.description
+            "latitude": location.latitude.description,
+            "longitude": location.longitude.description
         ]
         
-        let bikeRack = [id.stringValue: bikeRackDetails]
+        let bikeRack = [id: bikeRackDetails]
         
-        bikeRacksRef.setValue(bikeRack)
+        bikeRacksRef.updateChildValues(bikeRack)
         
     }
     

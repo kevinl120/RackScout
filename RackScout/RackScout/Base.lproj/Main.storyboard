@@ -10,7 +10,7 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Map View Controller-->
+        <!--Map-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="RackScout" customModuleProvider="target" sceneMemberID="viewController">
@@ -43,7 +43,7 @@
                                                 <constraint firstAttribute="height" constant="40" id="l0R-XF-BmZ"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
-                                            <state key="normal" title="Add Bike Rack">
+                                            <state key="normal" title="Add">
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -67,7 +67,7 @@
                             <constraint firstAttribute="trailing" secondItem="QYE-gN-CYY" secondAttribute="trailing" id="ySm-Rn-dkO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="cqZ-ma-KpI"/>
+                    <navigationItem key="navigationItem" title="Map" id="cqZ-ma-KpI"/>
                     <connections>
                         <outlet property="addBikeRackButton" destination="iMv-VB-4O2" id="oF3-Yi-ntO"/>
                         <outlet property="mapView" destination="QYE-gN-CYY" id="NdX-tb-vG6"/>
