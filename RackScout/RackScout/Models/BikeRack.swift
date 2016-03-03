@@ -9,30 +9,30 @@
 import UIKit
 
 import Firebase
+import GeoFire
 
 class BikeRack: NSObject {
-
-    var id: NSString
-    var location: CLLocationCoordinate2D
     
-    init(id: NSString, location: CLLocationCoordinate2D) {
-        self.id = id
+    var location: CLLocationCoordinate2D
+    var title: NSString
+    
+    init(location: CLLocationCoordinate2D, title: NSString) {
         self.location = location
+        self.title = title
     }
     
     func upload() {
-        let ref = Firebase(url: "https://rackscout.firebaseio.com/")
-        let bikeRacksRef = ref.childByAppendingPath("bikeRacks")
-    
+        let bikeRacksRef = Firebase(url: "https://rackscout.firebaseio.com/bikeRacks/")
+        let geoFire = GeoFire(firebaseRef: Firebase(url: "https://rackscout.firebaseio.com/geoFire"))
+        
         let bikeRackDetails = [
-            "latitude": location.latitude.description,
-            "longitude": location.longitude.description
+            "title": title
         ]
         
-        let bikeRack = [id: bikeRackDetails]
+        let idRef = bikeRacksRef.childByAutoId()
+        idRef.updateChildValues(bikeRackDetails)
         
-        bikeRacksRef.updateChildValues(bikeRack)
-        
+        geoFire.setLocation(CLLocation(latitude: 37.7853889, longitude: -122.4056973), forKey: idRef.key)
     }
     
 }

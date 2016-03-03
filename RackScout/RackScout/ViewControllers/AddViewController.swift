@@ -37,7 +37,7 @@ class AddViewController: UIViewController {
     }
     
     func saveButtonPressed() {
-        let bikeRack = BikeRack(id: "0", location: CLLocationCoordinate2DMake(10.0, 100.0))
+        let bikeRack = BikeRack(location: CLLocationCoordinate2DMake(100.0, 100.0), title: "hello")
         bikeRack.upload()
         
         if let navController = self.navigationController {
