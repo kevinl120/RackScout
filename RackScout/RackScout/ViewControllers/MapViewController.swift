@@ -10,6 +10,8 @@ import UIKit
 
 import Firebase
 
+import GoogleMaps
+
 import SMCalloutView
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
@@ -139,4 +141,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         self.performSegueWithIdentifier("showBikeRackInfo", sender: nil)
     }
     
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "addBikeRack" {
+            let vc = segue.destinationViewController as! AddViewController
+            if let location = locationManager.location {
+                vc.latitude = location.coordinate.latitude
+                vc.longitude = location.coordinate.longitude
+            }
+        }
+    }
 }

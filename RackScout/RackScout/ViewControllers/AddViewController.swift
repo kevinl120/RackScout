@@ -7,9 +7,17 @@
 //
 
 import UIKit
+
+import GoogleMaps
+
 import JVFloatLabeledTextField
 
 class AddViewController: UIViewController {
+    
+    var latitude: Double?
+    var longitude: Double?
+    
+    var photoTakingHelper: PhotoTakingHelper?
     
     @IBOutlet weak var mapView: GMSMapView!
 
@@ -21,8 +29,6 @@ class AddViewController: UIViewController {
     @IBOutlet weak var addImageButton: UIButton!
     @IBOutlet weak var addedImage: UIImageView!
     
-    var photoTakingHelper: PhotoTakingHelper?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -33,6 +39,7 @@ class AddViewController: UIViewController {
         self.navigationItem.setRightBarButtonItem(UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("saveButtonPressed")), animated: true)
         
         setUpTextFields()
+        setUpMap()
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,6 +48,7 @@ class AddViewController: UIViewController {
     }
     
     func setUpTextFields() {
+        // Draw the line underneath the text
         let bottomBorder1 = CALayer()
         bottomBorder1.frame = CGRectMake(0.0, streetAddressTextField.frame.size.height - 1, streetAddressTextField.frame.size.width, 1.0);
         bottomBorder1.backgroundColor = UIColor.lightGrayColor().CGColor
@@ -50,6 +58,54 @@ class AddViewController: UIViewController {
         bottomBorder2.frame = CGRectMake(0.0, cityStateZipTextField.frame.size.height - 1, cityStateZipTextField.frame.size.width, 1.0);
         bottomBorder2.backgroundColor = UIColor.lightGrayColor().CGColor
         cityStateZipTextField.layer.addSublayer(bottomBorder2)
+    }
+    
+    func setUpMap() {
+        if let latitude = latitude, longitude = longitude {
+            mapView.camera = GMSCameraPosition.cameraWithLatitude(latitude, longitude: longitude, zoom: 17)
+            
+            let marker = GMSMarker()
+            marker.position = CLLocationCoordinate2DMake(latitude, longitude)
+            marker.map = mapView
+            
+            let geocoder = GMSGeocoder()
+            geocoder.reverseGeocodeCoordinate(CLLocationCoordinate2DMake(latitude, longitude)) { (gmsReverseGeocodeResponse: GMSReverseGeocodeResponse?, let error: NSError?) -> Void in
+                
+                if let gmsAddress = gmsReverseGeocodeResponse!.firstResult() {
+                    if let streetAddress = gmsAddress.thoroughfare {
+                        self.streetAddressTextField.text = "\(streetAddress)"
+                    } else {
+                        self.streetAddressTextField.text = "Unavailable"
+                        self.streetAddressTextField.enabled = false
+                    }
+                    
+                    if let city = gmsAddress.locality {
+                        self.cityStateZipTextField.text = "\(city)"
+                    } else if let zip = gmsAddress.postalCode {
+                        self.cityStateZipTextField.text = "\(zip)"
+                    } else {
+                        self.cityStateZipTextField.text = "Unavailable"
+                        self.streetAddressTextField.enabled = false
+                        
+                    }
+                
+                } else {
+                    self.streetAddressTextField.text = "Unavailable"
+                    self.cityStateZipTextField.text = "Unavailable"
+                    self.streetAddressTextField.enabled = false
+                    self.cityStateZipTextField.enabled = false
+                }
+            }
+        } else {
+            streetAddressTextField.text = "Unavailable"
+            cityStateZipTextField.text = "Unavailable"
+            streetAddressTextField.enabled = false
+            cityStateZipTextField.enabled = false
+            
+            if let saveButton = self.navigationItem.rightBarButtonItem {
+                saveButton.enabled = false
+            }
+        }
     }
     
     @IBAction func addImageButtonPressed(sender: AnyObject) {
@@ -66,6 +122,24 @@ class AddViewController: UIViewController {
     }
     
     func saveButtonPressed() {
+        
+        var bikeRack: BikeRack!
+        var description: NSString!
+        
+        if descriptionTextField.text == "" {
+            description = "Bike Rack"
+        } else {
+            description = descriptionTextField.text
+        }
+        
+        if let image = addedImage.image {
+            bikeRack = BikeRack(location: CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!), desc: description, image: image)
+        } else {
+            bikeRack = BikeRack(location: CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!), desc: description)
+        }
+        
+        bikeRack.upload()
+        
         if let navController = self.navigationController {
             navController.popViewControllerAnimated(true)
         }

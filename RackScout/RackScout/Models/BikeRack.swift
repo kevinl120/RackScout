@@ -14,20 +14,40 @@ import GeoFire
 class BikeRack: NSObject {
     
     var location: CLLocationCoordinate2D
-    var title: NSString
+    var desc: NSString
+    var image: UIImage?
     
-    init(location: CLLocationCoordinate2D, title: NSString) {
+    init(location: CLLocationCoordinate2D, desc: NSString, image: UIImage) {
         self.location = location
-        self.title = title
+        self.desc = desc
+        self.image = image
+    }
+    
+    init(location: CLLocationCoordinate2D, desc: NSString) {
+        self.location = location
+        self.desc = desc
     }
     
     func upload() {
         let bikeRacksRef = Firebase(url: "https://rackscout.firebaseio.com/bikeRacks/")
         let geoFire = GeoFire(firebaseRef: Firebase(url: "https://rackscout.firebaseio.com/geoFire"))
         
-        let bikeRackDetails = [
-            "title": title
-        ]
+        var bikeRackDetails: [NSString: NSString]!
+        
+        if let imageSave = image {
+            
+            let imageData = UIImageJPEGRepresentation(imageSave, 0.7)
+            let base64String: NSString! = (imageData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding76CharacterLineLength))
+            
+            bikeRackDetails = [
+                "desc": desc,
+                "image": base64String
+            ]
+        } else {
+            bikeRackDetails = [
+                "desc": desc
+            ]
+        }
         
         let idRef = bikeRacksRef.childByAutoId()
         idRef.updateChildValues(bikeRackDetails)

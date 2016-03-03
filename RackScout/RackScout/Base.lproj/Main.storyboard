@@ -54,7 +54,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <segue destination="qcq-9D-YB3" kind="show" id="W6s-fn-vb3"/>
+                                                <segue destination="qcq-9D-YB3" kind="show" identifier="addBikeRack" id="W6s-fn-vb3"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
