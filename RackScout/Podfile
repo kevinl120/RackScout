@@ -9,6 +9,7 @@ pod 'Firebase', '>= 2.3.2'
 pod 'GeoFire', '>= 1.1'
 pod 'GoogleMaps'
 pod 'SMCalloutView'
+pod 'JVFloatLabeledTextField'
 
 end
 

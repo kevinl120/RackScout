@@ -16,6 +16,7 @@
 		1E8DB1221C826C7A0014BEFC /* RackScoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8DB1211C826C7A0014BEFC /* RackScoutUITests.swift */; };
 		1EA2417F1C8402490077DF47 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA2417E1C8402490077DF47 /* MapViewController.swift */; };
 		1EA5626B1C87D5FD00CA2255 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA5626A1C87D5FD00CA2255 /* InfoViewController.swift */; };
+		1EA5626E1C87EAEF00CA2255 /* PhotoTakingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA5626D1C87EAEF00CA2255 /* PhotoTakingHelper.swift */; };
 		1EF38FD41C83BB0E00FA1AF1 /* BikeRack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF38FD31C83BB0E00FA1AF1 /* BikeRack.swift */; };
 		E16496296CB3C9947B76D82A /* Pods_RackScout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0F8B855D319D615E5A78DF /* Pods_RackScout.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		1EA2417E1C8402490077DF47 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1EA562681C87CA9700CA2255 /* SMCalloutView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SMCalloutView.framework; path = "Pods/../build/Debug-iphoneos/SMCalloutView.framework"; sourceTree = "<group>"; };
 		1EA5626A1C87D5FD00CA2255 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		1EA5626D1C87EAEF00CA2255 /* PhotoTakingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTakingHelper.swift; sourceTree = "<group>"; };
 		1EF38FD31C83BB0E00FA1AF1 /* BikeRack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeRack.swift; sourceTree = "<group>"; };
 		6930C73F656645FB6C075188 /* Pods-RackScout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RackScout.release.xcconfig"; path = "Pods/Target Support Files/Pods-RackScout/Pods-RackScout.release.xcconfig"; sourceTree = "<group>"; };
 		896A528AA2F43D32CF2248A0 /* Pods-RackScout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RackScout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RackScout/Pods-RackScout.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				1EF38FD11C83BA7600FA1AF1 /* ViewControllers */,
 				1EF38FD21C83BABD00FA1AF1 /* Models */,
+				1EA5626C1C87EAEF00CA2255 /* PhotoTaking */,
 				1EA2417B1C83CEA10077DF47 /* RackScout-Bridging-Header.h */,
 				1E8DB1011C826C7A0014BEFC /* AppDelegate.swift */,
 				1E8DB1051C826C7A0014BEFC /* Main.storyboard */,
@@ -140,6 +143,14 @@
 				1E8DB1231C826C7A0014BEFC /* Info.plist */,
 			);
 			path = RackScoutUITests;
+			sourceTree = "<group>";
+		};
+		1EA5626C1C87EAEF00CA2255 /* PhotoTaking */ = {
+			isa = PBXGroup;
+			children = (
+				1EA5626D1C87EAEF00CA2255 /* PhotoTakingHelper.swift */,
+			);
+			path = PhotoTaking;
 			sourceTree = "<group>";
 		};
 		1EF38FD11C83BA7600FA1AF1 /* ViewControllers */ = {
@@ -360,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EA5626E1C87EAEF00CA2255 /* PhotoTakingHelper.swift in Sources */,
 				1E8DB1021C826C7A0014BEFC /* AppDelegate.swift in Sources */,
 				1EF38FD41C83BB0E00FA1AF1 /* BikeRack.swift in Sources */,
 				1E608C171C84EB240059FCAB /* AddViewController.swift in Sources */,
@@ -510,7 +522,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = RackScout/Info.plist;
@@ -531,7 +542,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = RackScout/Info.plist;

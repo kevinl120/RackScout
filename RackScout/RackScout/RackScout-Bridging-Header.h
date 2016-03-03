@@ -4,4 +4,3 @@
 
 #import "GoogleMaps/GoogleMaps.h"
 #import "SMCalloutView/SMCalloutView.h"
-#import "SMCalloutView/SMClassicCalloutView.h"
