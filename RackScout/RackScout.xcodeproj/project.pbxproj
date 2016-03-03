@@ -15,6 +15,7 @@
 		1E8DB1171C826C7A0014BEFC /* RackScoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8DB1161C826C7A0014BEFC /* RackScoutTests.swift */; };
 		1E8DB1221C826C7A0014BEFC /* RackScoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8DB1211C826C7A0014BEFC /* RackScoutUITests.swift */; };
 		1EA2417F1C8402490077DF47 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA2417E1C8402490077DF47 /* MapViewController.swift */; };
+		1EA5626B1C87D5FD00CA2255 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA5626A1C87D5FD00CA2255 /* InfoViewController.swift */; };
 		1EF38FD41C83BB0E00FA1AF1 /* BikeRack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF38FD31C83BB0E00FA1AF1 /* BikeRack.swift */; };
 		E16496296CB3C9947B76D82A /* Pods_RackScout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0F8B855D319D615E5A78DF /* Pods_RackScout.framework */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,8 @@
 		1E8DB1231C826C7A0014BEFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EA2417B1C83CEA10077DF47 /* RackScout-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RackScout-Bridging-Header.h"; sourceTree = "<group>"; };
 		1EA2417E1C8402490077DF47 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1EA562681C87CA9700CA2255 /* SMCalloutView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SMCalloutView.framework; path = "Pods/../build/Debug-iphoneos/SMCalloutView.framework"; sourceTree = "<group>"; };
+		1EA5626A1C87D5FD00CA2255 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		1EF38FD31C83BB0E00FA1AF1 /* BikeRack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeRack.swift; sourceTree = "<group>"; };
 		6930C73F656645FB6C075188 /* Pods-RackScout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RackScout.release.xcconfig"; path = "Pods/Target Support Files/Pods-RackScout/Pods-RackScout.release.xcconfig"; sourceTree = "<group>"; };
 		896A528AA2F43D32CF2248A0 /* Pods-RackScout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RackScout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RackScout/Pods-RackScout.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,14 +112,14 @@
 		1E8DB1001C826C7A0014BEFC /* RackScout */ = {
 			isa = PBXGroup;
 			children = (
-				1EF38FD21C83BABD00FA1AF1 /* Models */,
 				1EF38FD11C83BA7600FA1AF1 /* ViewControllers */,
+				1EF38FD21C83BABD00FA1AF1 /* Models */,
+				1EA2417B1C83CEA10077DF47 /* RackScout-Bridging-Header.h */,
 				1E8DB1011C826C7A0014BEFC /* AppDelegate.swift */,
 				1E8DB1051C826C7A0014BEFC /* Main.storyboard */,
 				1E8DB1081C826C7A0014BEFC /* Assets.xcassets */,
 				1E8DB10A1C826C7A0014BEFC /* LaunchScreen.storyboard */,
 				1E8DB10D1C826C7A0014BEFC /* Info.plist */,
-				1EA2417B1C83CEA10077DF47 /* RackScout-Bridging-Header.h */,
 			);
 			path = RackScout;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			children = (
 				1EA2417E1C8402490077DF47 /* MapViewController.swift */,
 				1E608C161C84EB240059FCAB /* AddViewController.swift */,
+				1EA5626A1C87D5FD00CA2255 /* InfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -168,6 +172,7 @@
 		71D10A6A08ED49C7B7B9B7A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1EA562681C87CA9700CA2255 /* SMCalloutView.framework */,
 				8C0F8B855D319D615E5A78DF /* Pods_RackScout.framework */,
 			);
 			name = Frameworks;
@@ -359,6 +364,7 @@
 				1EF38FD41C83BB0E00FA1AF1 /* BikeRack.swift in Sources */,
 				1E608C171C84EB240059FCAB /* AddViewController.swift in Sources */,
 				1EA2417F1C8402490077DF47 /* MapViewController.swift in Sources */,
+				1EA5626B1C87D5FD00CA2255 /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

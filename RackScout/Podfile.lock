@@ -3,15 +3,18 @@ PODS:
   - GeoFire (1.1.2):
     - Firebase (~> 2.2)
   - GoogleMaps (1.12.3)
+  - SMCalloutView (2.1.5)
 
 DEPENDENCIES:
   - Firebase (>= 2.3.2)
   - GeoFire (>= 1.1)
   - GoogleMaps
+  - SMCalloutView
 
 SPEC CHECKSUMS:
   Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
   GeoFire: 03db4e390a4cf3ff97422f19eb71ab1aa7d947dd
   GoogleMaps: a4ac67918d0b5ba5f6b9893ac80487e357779e6c
+  SMCalloutView: 5c0ee363dc8e7204b2fda17dfad38c93e9e23481
 
 COCOAPODS: 0.39.0

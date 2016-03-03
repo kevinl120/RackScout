@@ -70,12 +70,31 @@
                     <navigationItem key="navigationItem" title="Map" id="cqZ-ma-KpI"/>
                     <connections>
                         <outlet property="addBikeRackButton" destination="iMv-VB-4O2" id="oF3-Yi-ntO"/>
-                        <outlet property="mapView" destination="QYE-gN-CYY" id="NdX-tb-vG6"/>
+                        <outlet property="mapView" destination="QYE-gN-CYY" id="foc-NP-QFk"/>
+                        <segue destination="OeC-4Y-Xub" kind="show" identifier="showBikeRackInfo" id="eKN-UJ-tvo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1357" y="267"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="Tfm-bU-q08">
+            <objects>
+                <viewController id="OeC-4Y-Xub" customClass="InfoViewController" customModule="RackScout" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NwC-TX-MUC"/>
+                        <viewControllerLayoutGuide type="bottom" id="a99-hI-lVf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HzV-5x-keP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CQf-af-Bgi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1357" y="1036"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="Rb6-wR-Vmx">
