@@ -9,7 +9,7 @@
 import UIKit
 
 import Firebase
-
+import GeoFire
 import GoogleMaps
 
 import SMCalloutView
@@ -41,17 +41,28 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: Location
+    // MARK: Mechanics
     
-    func setUpLocationManager() {
-        locationManager.requestWhenInUseAuthorization()
+    func findBikeRacks() {
+        let ref = Firebase(url: "https://rackscout.firebaseio.com/geoFire")
+        let geoFire = GeoFire(firebaseRef: ref)
         
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-            locationManager.startUpdatingLocation()
+        if let location = locationManager.location {
+            
+            let geoQuery = geoFire.queryAtLocation(CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude), withRadius: 1609) // kilometers
+            
+            print(location.coordinate)
+            
+            geoQuery.observeEventType(GFEventTypeKeyEntered, withBlock: { result in
+                print(result.1.coordinate)
+                let marker = GMSMarker(position: result.1.coordinate)
+                marker.map = self.mapView
+            })
         }
+
     }
+    
+    // MARK: Location
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // Change camera view only once
@@ -60,22 +71,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         }
         
         locationManager.stopUpdatingLocation()
+        
+        findBikeRacks()
     }
     
     // MARK: Map Setup
-    
-    func setUpMap() {
-        mapView.delegate = self
-        mapView.myLocationEnabled = true
-        mapView.settings.myLocationButton = true
-        mapView.padding = UIEdgeInsets(top: 64.0, left: 0.0, bottom: 60.0, right: 0.0)
-        
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(37.331694, -122.030219)
-        marker.title = "Apple"
-        marker.snippet = "Headquarters"
-        marker.map = mapView
-    }
     
     func mapView(mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
         
@@ -128,7 +128,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     }
     
     // MARK: Setup
+    
+    func setUpLocationManager() {
+        locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+            locationManager.startUpdatingLocation()
+        }
+    }
 
+    func setUpMap() {
+        mapView.delegate = self
+        mapView.myLocationEnabled = true
+        mapView.settings.myLocationButton = true
+        mapView.padding = UIEdgeInsets(top: 64.0, left: 0.0, bottom: 60.0, right: 0.0)
+    }
+    
     func setUpCalloutView() {
         let button = UIButton(type: UIButtonType.DetailDisclosure)
         button.addTarget(self, action: Selector("calloutButtonTapped"), forControlEvents: UIControlEvents.TouchUpInside)
