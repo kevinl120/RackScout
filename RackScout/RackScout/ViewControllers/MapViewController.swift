@@ -51,11 +51,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
             
             let geoQuery = geoFire.queryAtLocation(CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude), withRadius: 1609) // kilometers
             
-            print(location.coordinate)
-            
             geoQuery.observeEventType(GFEventTypeKeyEntered, withBlock: { result in
-                print(result.1.coordinate)
                 let marker = GMSMarker(position: result.1.coordinate)
+                
+                
+                // Change marker title text
+                var refString = "https://rackscout.firebaseio.com/bikeRacks/"
+                if let id = result.0 {
+                    marker.snippet = id
+                    refString += id
+                    refString += "/desc"
+                }
+                
+                let ref = Firebase(url: refString)
+                
+                ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
+                    marker.title = snapshot.value as? String
+                })
+                
                 marker.map = self.mapView
             })
         }
@@ -124,6 +137,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     func mapView(mapView: GMSMapView, didTapMarker marker: GMSMarker) -> Bool {
         // Callout View Setup
         mapView.selectedMarker = marker
+        
         return true
     }
     
