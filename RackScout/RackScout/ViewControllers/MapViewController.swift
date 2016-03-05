@@ -18,6 +18,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     let locationManager = CLLocationManager()
     
+    var lastCameraPosition: CLLocationCoordinate2D?
+    
     var calloutView = SMCalloutView()
     var emptyCalloutView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
     let CalloutYOffset: CGFloat = 40.0
@@ -34,6 +36,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         setUpCalloutView()
         setUpMap()
         
+        self.navigationItem.setLeftBarButtonItem(UIBarButtonItem(title: "Refresh", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("findBikeRacks")), animated: true)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,32 +51,29 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         let ref = Firebase(url: "https://rackscout.firebaseio.com/geoFire")
         let geoFire = GeoFire(firebaseRef: ref)
         
-        if let location = locationManager.location {
+        let geoQuery = geoFire.queryAtLocation(CLLocation(latitude: mapView.camera.target.latitude, longitude: mapView.camera.target.longitude), withRadius: 1.609) // kilometers
+        
+        geoQuery.observeEventType(GFEventTypeKeyEntered, withBlock: { result in
+            let marker = GMSMarker(position: result.1.coordinate)
             
-            let geoQuery = geoFire.queryAtLocation(CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude), withRadius: 1609) // kilometers
             
-            geoQuery.observeEventType(GFEventTypeKeyEntered, withBlock: { result in
-                let marker = GMSMarker(position: result.1.coordinate)
-                
-                
-                // Change marker title text
-                var refString = "https://rackscout.firebaseio.com/bikeRacks/"
-                if let id = result.0 {
-                    marker.snippet = id
-                    refString += id
-                    refString += "/desc"
-                }
-                
-                let ref = Firebase(url: refString)
-                
-                ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
-                    marker.title = snapshot.value as? String
-                })
-                
-                marker.map = self.mapView
+            // Change marker title text
+            var refString = "https://rackscout.firebaseio.com/bikeRacks/"
+            if let id = result.0 {
+                marker.snippet = id
+                refString += id
+                refString += "/desc"
+            }
+            
+            let ref = Firebase(url: refString)
+            
+            ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
+                marker.title = snapshot.value as? String
             })
-        }
-
+            
+            marker.map = self.mapView
+        })
+        
     }
     
     // MARK: Location
@@ -81,6 +82,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         // Change camera view only once
         if let location = locationManager.location {
             mapView.camera = GMSCameraPosition.cameraWithLatitude(location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 16)
+            lastCameraPosition = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         }
         
         locationManager.stopUpdatingLocation()
@@ -93,7 +95,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     func mapView(mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
         
         // Callout View Setup
-
+        
         let anchor = marker.position
         
         let point = mapView.projection.pointForCoordinate(anchor)
@@ -112,6 +114,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     }
     
     func mapView(mapView: GMSMapView, didChangeCameraPosition position: GMSCameraPosition) {
+        
+        if let pos = lastCameraPosition {
+            if (position.target.latitude - pos.latitude) > 0.1 || (position.target.longitude - pos.longitude) > 0.1 {
+                findBikeRacks()
+                lastCameraPosition!.latitude = position.target.latitude
+                lastCameraPosition!.longitude = position.target.longitude
+            }
+        }
         
         // Callout View Setup
         
@@ -152,7 +162,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
             locationManager.startUpdatingLocation()
         }
     }
-
+    
     func setUpMap() {
         mapView.delegate = self
         mapView.myLocationEnabled = true
