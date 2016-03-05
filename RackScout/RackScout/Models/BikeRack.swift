@@ -52,7 +52,7 @@ class BikeRack: NSObject {
         let idRef = bikeRacksRef.childByAutoId()
         idRef.updateChildValues(bikeRackDetails)
         
-        geoFire.setLocation(CLLocation(latitude: 37.7853889, longitude: -122.4056973), forKey: idRef.key)
+        geoFire.setLocation(CLLocation(latitude: location.latitude, longitude: location.longitude), forKey: idRef.key)
     }
     
 }

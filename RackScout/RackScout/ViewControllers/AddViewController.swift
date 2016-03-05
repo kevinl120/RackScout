@@ -132,6 +132,8 @@ class AddViewController: UIViewController {
             description = descriptionTextField.text
         }
         
+        print(latitude!)
+        
         if let image = addedImage.image {
             bikeRack = BikeRack(location: CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!), desc: description, image: image)
         } else {

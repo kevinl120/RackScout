@@ -180,6 +180,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
                 vc.latitude = location.coordinate.latitude
                 vc.longitude = location.coordinate.longitude
             }
+        } else if segue.identifier == "showBikeRackInfo" {
+            let vc = segue.destinationViewController as! InfoViewController
+            vc.id = mapView.selectedMarker!.snippet!
         }
     }
 }
