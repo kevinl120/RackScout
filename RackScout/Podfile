@@ -21,3 +21,7 @@ target 'RackScoutUITests' do
 
 end
 
+# post_install do | installer |
+#    require 'fileutils'
+#    FileUtils.cp_r('Pods/Target Support Files/Pods-RackScout/Pods-RackScout-Acknowledgements.plist', 'Resources/Settings.bundle/Acknowledgements.plist', :remove_destination => true)
+# end

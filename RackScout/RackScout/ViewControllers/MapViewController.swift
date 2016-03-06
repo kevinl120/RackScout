@@ -38,6 +38,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         
         self.navigationItem.setLeftBarButtonItem(UIBarButtonItem(title: "Refresh", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("findBikeRacks")), animated: true)
         
+        self.navigationItem.setRightBarButtonItem(UIBarButtonItem(title: "Settings", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("settingsButtonPressed")), animated: true)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,7 +53,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         let ref = Firebase(url: "https://rackscout.firebaseio.com/geoFire")
         let geoFire = GeoFire(firebaseRef: ref)
         
-        let geoQuery = geoFire.queryAtLocation(CLLocation(latitude: mapView.camera.target.latitude, longitude: mapView.camera.target.longitude), withRadius: 1.609) // kilometers
+        let geoQuery = geoFire.queryAtLocation(CLLocation(latitude: mapView.camera.target.latitude, longitude: mapView.camera.target.longitude), withRadius: (1.609 * 5)) // kilometers
         
         geoQuery.observeEventType(GFEventTypeKeyEntered, withBlock: { result in
             let marker = GMSMarker(position: result.1.coordinate)
@@ -115,11 +117,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     func mapView(mapView: GMSMapView, didChangeCameraPosition position: GMSCameraPosition) {
         
-        if let pos = lastCameraPosition {
-            if (position.target.latitude - pos.latitude) > 0.1 || (position.target.longitude - pos.longitude) > 0.1 {
-                findBikeRacks()
-                lastCameraPosition!.latitude = position.target.latitude
-                lastCameraPosition!.longitude = position.target.longitude
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if defaults.boolForKey("autoRefresh") {
+            if let pos = lastCameraPosition {
+                if (position.target.latitude - pos.latitude) > (0.1 / (7.0/5.0)) || (position.target.longitude - pos.longitude) > (0.1 / (7.0/5.0)) {
+                    findBikeRacks()
+                    lastCameraPosition!.latitude = position.target.latitude
+                    lastCameraPosition!.longitude = position.target.longitude
+                }
             }
         }
         
@@ -180,6 +186,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     // MARK: Navigation
     func calloutButtonTapped() {
         self.performSegueWithIdentifier("showBikeRackInfo", sender: nil)
+    }
+    
+    func settingsButtonPressed() {
+        self.performSegueWithIdentifier("showSettings", sender: nil)
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation

@@ -58,6 +58,9 @@ class AddViewController: UIViewController {
         bottomBorder2.frame = CGRectMake(0.0, cityStateZipTextField.frame.size.height - 1, cityStateZipTextField.frame.size.width, 1.0);
         bottomBorder2.backgroundColor = UIColor.lightGrayColor().CGColor
         cityStateZipTextField.layer.addSublayer(bottomBorder2)
+        
+        streetAddressTextField.allowsEditingTextAttributes = false
+        cityStateZipTextField.allowsEditingTextAttributes = false
     }
     
     func setUpMap() {
