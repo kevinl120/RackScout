@@ -266,7 +266,7 @@
 				TargetAttributes = {
 					1E8DB0FD1C826C7A0014BEFC = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = JADEVJSFFX;
+						DevelopmentTeam = JDME9VJR3X;
 					};
 					1E8DB1111C826C7A0014BEFC = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -538,7 +538,7 @@
 				INFOPLIST_FILE = RackScout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.kli.RackScout;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinli.RackScout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "RackScout/RackScout-Bridging-Header.h";
@@ -561,7 +561,7 @@
 				INFOPLIST_FILE = RackScout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.kli.RackScout;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinli.RackScout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "RackScout/RackScout-Bridging-Header.h";

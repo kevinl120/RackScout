@@ -106,6 +106,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "RackScout"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

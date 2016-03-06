@@ -156,6 +156,11 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Text Field Methods
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -190,7 +195,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     
     func setViewMovedUp(movedUp: Bool) {
         
-        let keyboardOffset: CGFloat = 80.0
+        let keyboardOffset: CGFloat = 240.0
         
         UIView.beginAnimations(nil, context: nil)
         UIView.setAnimationDuration(0.3)

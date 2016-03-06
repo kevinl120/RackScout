@@ -296,10 +296,10 @@
             </objects>
             <point key="canvasLocation" x="2127" y="-440"/>
         </scene>
-        <!--Add View Controller-->
+        <!--Add Bike Rack-->
         <scene sceneID="Rb6-wR-Vmx">
             <objects>
-                <viewController id="qcq-9D-YB3" customClass="AddViewController" customModule="RackScout" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add Bike Rack" id="qcq-9D-YB3" customClass="AddViewController" customModule="RackScout" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WnR-9w-eXR"/>
                         <viewControllerLayoutGuide type="bottom" id="0O9-6J-dlj"/>
