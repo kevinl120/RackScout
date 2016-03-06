@@ -4,24 +4,17 @@
 use_frameworks!
 
 target 'RackScout' do
-
 pod 'Firebase', '>= 2.3.2'
 pod 'GeoFire', '>= 1.1'
 pod 'GoogleMaps'
 pod 'SMCalloutView'
 pod 'JVFloatLabeledTextField'
-
 end
 
-target 'RackScoutTests' do
-
-end
-
-target 'RackScoutUITests' do
-
-end
-
+#
+# Auto-attribution -- DO NOT UNCOMMENT BEFORE SAVING ACKNOWLEDGEMENTS.PLIST
+#
 # post_install do | installer |
 #    require 'fileutils'
-#    FileUtils.cp_r('Pods/Target Support Files/Pods-RackScout/Pods-RackScout-Acknowledgements.plist', 'Resources/Settings.bundle/Acknowledgements.plist', :remove_destination => true)
+#    FileUtils.cp_r('Pods/Target Support Files/Pods-RackScout/Pods-RackScout-Acknowledgements.plist', 'RackScout/Settings.bundle/Acknowledgements.plist', :remove_destination => true)
 # end
