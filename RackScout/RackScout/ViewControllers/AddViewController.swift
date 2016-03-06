@@ -12,7 +12,7 @@ import GoogleMaps
 
 import JVFloatLabeledTextField
 
-class AddViewController: UIViewController {
+class AddViewController: UIViewController, UITextFieldDelegate {
     
     var latitude: Double?
     var longitude: Double?
@@ -48,6 +48,9 @@ class AddViewController: UIViewController {
     }
     
     func setUpTextFields() {
+        
+        descriptionTextField.delegate = self
+        
         // Draw the line underneath the text
         let bottomBorder1 = CALayer()
         bottomBorder1.frame = CGRectMake(0.0, streetAddressTextField.frame.size.height - 1, streetAddressTextField.frame.size.width, 1.0);
@@ -148,6 +151,62 @@ class AddViewController: UIViewController {
         if let navController = self.navigationController {
             navController.popViewControllerAnimated(true)
         }
+    }
+
+    
+    // MARK: Text Field Methods
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Set up keyboard to not block text fields
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide"), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Unregister keyboard notifications
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func keyboardWillShow() {
+        if self.view.frame.origin.y >= 0 {
+            setViewMovedUp(true)
+        } else if (self.view.frame.origin.y < 0) {
+            setViewMovedUp(false)
+        }
+    }
+    
+    func keyboardWillHide() {
+        if self.view.frame.origin.y >= 0 {
+            setViewMovedUp(true)
+        } else if (self.view.frame.origin.y < 0) {
+            setViewMovedUp(false)
+        }
+    }
+    
+    func setViewMovedUp(movedUp: Bool) {
+        
+        let keyboardOffset: CGFloat = 80.0
+        
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDuration(0.3)
+        
+        var rect = self.view.frame
+        
+        if movedUp {
+            rect.origin.y -= keyboardOffset
+            rect.size.height += keyboardOffset
+        } else {
+            rect.origin.y += keyboardOffset
+            rect.size.height -= keyboardOffset
+        }
+        self.view.frame = rect
+        
+        UIView.commitAnimations()
     }
 
     

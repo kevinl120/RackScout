@@ -157,11 +157,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXN-ow-117">
-                                <rect key="frame" x="100" y="432" width="400" height="30"/>
+                                <rect key="frame" x="100" y="440" width="400" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="400" id="5LX-6Q-wkU"/>
                                     <constraint firstAttribute="height" constant="30" id="tE9-uL-7Gy"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Image"/>
                                 <connections>
                                     <action selector="imageButtonPressed:" destination="OeC-4Y-Xub" eventType="touchUpInside" id="4x2-zE-C5o"/>
@@ -179,7 +180,7 @@
                             <constraint firstItem="eXV-vW-8t6" firstAttribute="leading" secondItem="c48-lP-GaI" secondAttribute="leading" id="dQ4-zf-dLn"/>
                             <constraint firstItem="sXN-ow-117" firstAttribute="centerX" secondItem="HzV-5x-keP" secondAttribute="centerX" id="l39-Wh-c4i"/>
                             <constraint firstAttribute="trailing" secondItem="c48-lP-GaI" secondAttribute="trailing" constant="-1" id="l4R-wW-Q7G"/>
-                            <constraint firstItem="sXN-ow-117" firstAttribute="top" secondItem="c48-lP-GaI" secondAttribute="bottom" constant="8" id="qkY-YF-99I"/>
+                            <constraint firstItem="sXN-ow-117" firstAttribute="top" secondItem="c48-lP-GaI" secondAttribute="bottom" constant="16" id="qkY-YF-99I"/>
                             <constraint firstItem="6sq-B6-Dvt" firstAttribute="leading" secondItem="HzV-5x-keP" secondAttribute="leading" id="rGB-Kv-6N3"/>
                             <constraint firstAttribute="trailing" secondItem="6sq-B6-Dvt" secondAttribute="trailing" id="xLA-Tf-9GM"/>
                             <constraint firstItem="c48-lP-GaI" firstAttribute="top" secondItem="6sq-B6-Dvt" secondAttribute="bottom" id="xNE-MV-EZE"/>
